@@ -1,23 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Exercise</title>
-</head>
-<body>
-  <div class="container">
-    <!-- AUDIO HTML GOES HERE -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Exercise</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- AUDIO HTML GOES HERE -->
+      <section>
+        <audio src="./assets/audio/piano.wav" controls muted loop>
+          <p>Your browser does not support the audio tag.</p>
+        </audio>
+      </section>
+      <!-- VIDEO HTML GOES HERE -->
+      <section>
+        <video controls muted poster="./assets/images/poster.jpg" width="640">
+          <source src="./assets/video/ocean.mp4" />
+          <p>Your browser does not support the video tag.</p>
+        </video>
+      </section>
+      <!-- IMAGE MAP HTML GOES HERE-->
+      <section>
+        <img
+          src="./assets/images/fruit_table.jpg"
+          alt="fruit table"
+          usemap="#fruit-map"
+          width="600"
+        />
+        <map id="fruit-map">
+          <area
+            shape="rect"
+            coords="0, 220, 170, 570"
+            href="https://en.wikipedia.org/wiki/Lavandula"
+            alt="Lavandula"
+          />
+          <area
+            shape="rect"
+            coords="80, 0, 280, 570"
+            href="https://en.wikipedia.org/wiki/Lavandula"
+            alt="Lavandula"
+          />
+          <area
+            shape="rect"
+            coords="360, 325, 600, 660"
+            href="https://en.wikipedia.org/wiki/Orange_(fruit)"
+            alt="Orange"
+          />
+          <area
+            shape="circle"
+            coords="430, 210, 90"
+            href="https://en.wikipedia.org/wiki/Coffee"
+            alt="Coffee"
+          />
+        </map>
+      </section>
+      <!-- CANVAS HTML GOES HERE -->
+      <section>
+        <canvas id="myCanvas" width="500" height="500"> </canvas>
+      </section>
+    </div>
 
-    <!-- VIDEO HTML GOES HERE -->
+    <script>
+      /* CANVAS JAVASCRIPT GOES HERE */
+      const canvas = document.getElementById("myCanvas");
+      const context = canvas.getContext("2d");
 
-    <!-- IMAGE MAP HTML GOES HERE-->
+      context.beginPath();
+      context.moveTo(150, 150);
+      context.lineTo(350, 150);
+      context.strokeStyle = "orange";
+      context.lineWidth = 5;
+      context.stroke();
 
-    <!-- CANVAS HTML GOES HERE -->
-  </div>
+      context.beginPath();
+      context.moveTo(350, 150);
+      context.lineTo(350, 350);
+      context.strokeStyle = "green";
+      context.lineWidth = 5;
+      context.stroke();
 
-  <script>
-    /* CANVAS JAVASCRIPT GOES HERE */
-  </script>
-</body>
+      context.beginPath();
+      context.moveTo(350, 350);
+      context.lineTo(150, 350);
+      context.strokeStyle = "blue";
+      context.lineWidth = 5;
+      context.stroke();
+
+      context.beginPath();
+      context.moveTo(150, 350);
+      context.lineTo(150, 150);
+      context.strokeStyle = "purple";
+      context.lineWidth = 5;
+      context.stroke();
+    </script>
+  </body>
 </html>

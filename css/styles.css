@@ -5,7 +5,8 @@
 }
 
 body {
-  background: url(../assets/images/background.jpg) green no-repeat bottom center;
+  background: url(../assets/images/background.jpg) #325837 no-repeat bottom
+    center;
 }
 
 section {
